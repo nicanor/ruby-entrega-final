@@ -1,28 +1,29 @@
-== README
+== Opción 2: desarrollar una aplicación Rails para Gestión de Aulas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+La aplicación deberá:
 
-Things you may want to cover:
+* Permitir la reserva de aulas por docentes, pero la aprobación de los pedidos la realizará un rol diferente que llamaremos Celador
 
-* Ruby version
+* Permitir al celador agregar nuevas aulas
 
-* System dependencies
+* Los usuarios deberán autenticarse usando sus cuentas de Google, Twitter y/o Facebook
 
-* Configuration
+* La gestión de aulas (recursos), se realizará por medio de la API de recursos
 
-* Database creation
+* Para cada aula, un docente/celador podrá:
 
-* Database initialization
+**  Listar horarios disponibles
+** Listar las reservas permitiendo filtrar por estado
+** Reservar el aula
+** Cancelar las reservas propias
+** El celador podrá autorizar las reservas pendientes o cancelarlas
+** Recibir notificaciones por mail cuando:
+*** Una reserva cambia el estado
+*** Un tiempo X en horas configurable, antes que una reserva aprobada se cumpla
 
-* How to run the test suite
+Consideraciones
 
-* Services (job queues, cache servers, search engines, etc.)
+Sería conveniente agregar en la API un servicio de agregado y modificación de recursos:
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* POST /resources crea un nuevo recurso
+* PUT /resources/:id actualiza los datos de un recursoesarrollar una aplicación Rails para Gestión de Aulas
