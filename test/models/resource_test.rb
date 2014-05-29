@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ResourceTest < ActiveSupport::TestCase
+
   test "should create resource" do
     x = Resource.count
     r = Resource.create(name: 'Name', description: 'Description')
@@ -8,6 +9,12 @@ class ResourceTest < ActiveSupport::TestCase
     
     assert_equal 'Name', r.name
     assert_equal 'Description', r.description
+  end
+
+  test "should not create resource" do
+    assert_raises(ActiveRecord::RecordInvalid) { Resource.create! }
+    assert_raises(ActiveRecord::RecordInvalid) { Resource.create!(name: '') }
+    assert_raises(ActiveRecord::RecordInvalid) { Resource.create!(description: 'A Description without name') }
   end
 
   test "should update resource" do
@@ -23,4 +30,5 @@ class ResourceTest < ActiveSupport::TestCase
     assert_equal (x-1), Resource.count
     assert_raises(ActiveRecord::RecordNotFound) { Resource.find(id) }
   end
+  
 end

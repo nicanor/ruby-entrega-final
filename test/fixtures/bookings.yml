@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  resource_id: 
+  start_time: 2014-05-29 19:08:27
+  end_time: 2014-05-29 19:08:27
+  status: MyString
+
+two:
+  user_id: 
+  resource_id: 
+  start_time: 2014-05-29 19:08:27
+  end_time: 2014-05-29 19:08:27
+  status: MyString
