@@ -1,5 +1,5 @@
 class Booking < ActiveRecord::Base
-  belongs_to :user
+  #belongs_to :user
   belongs_to :resource
 
   before_validation :set_status
@@ -10,6 +10,6 @@ class Booking < ActiveRecord::Base
   private
 
   def set_status
-    self.status = 'pending' unless self.status
+    self.status = 'pending'
   end
 end
